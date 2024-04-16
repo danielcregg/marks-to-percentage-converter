@@ -1,1 +1,33 @@
-Test
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mark to Percentage Converter</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="text-center">Mark to Percentage Converter</h1>
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="marks">Enter Marks (out of 75):</label>
+                    <input type="number" class="form-control" id="marks" placeholder="Enter marks">
+                </div>
+                <button class="btn btn-primary" onclick="convertToPercentage()">Convert</button>
+                <div class="form-group mt-3">
+                    <label for="percentage">Percentage:</label>
+                    <input type="text" class="form-control" id="percentage" placeholder="Percentage will appear here" readonly>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function convertToPercentage() {
+            var marks = document.getElementById('marks').value;
+            var percentage = (marks / 75) * 70;
+            document.getElementById('percentage').value = percentage.toFixed(2) + '%';
+        }
+    </script>
+</body>
+</html>
