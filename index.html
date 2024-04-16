@@ -11,9 +11,8 @@
             <div class="col-md-6">
                 <div class="form-group">
                     <label for="marks">Enter Marks (out of 75):</label>
-                    <input type="number" class="form-control" id="marks" placeholder="Enter marks">
+                    <input type="number" class="form-control" id="marks" placeholder="Enter marks" oninput="convertToPercentage()">
                 </div>
-                <button class="btn btn-primary" onclick="convertToPercentage()">Convert</button>
                 <div class="form-group mt-3">
                     <label for="percentage">Percentage:</label>
                     <input type="text" class="form-control" id="percentage" placeholder="Percentage will appear here" readonly>
