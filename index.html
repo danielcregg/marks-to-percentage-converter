@@ -13,12 +13,20 @@
                     <label for="marks">Enter your paper Marks (0 of 75):</label>
                     <input type="number" class="form-control" id="marks" placeholder="Enter marks" min="0" max="75" step="0.1" oninput="convertToPercentage()">
                 </div>
+                <div class="form-group">
+                    <label for="mcq1">Enter MCQ1 Percentage:</label>
+                    <input type="number" class="form-control" id="mcq1" placeholder="Enter MCQ1 percentage" min="0" max="100" step="0.1" oninput="convertToPercentage()">
+                </div>
+                <div class="form-group">
+                    <label for="mcq2">Enter MCQ2 Percentage:</label>
+                    <input type="number" class="form-control" id="mcq2" placeholder="Enter MCQ2 percentage" min="0" max="100" step="0.1" oninput="convertToPercentage()">
+                </div>
                 <div class="form-group mt-3">
                     <label for="percentage">Module Percentage:</label>
                     <input type="text" class="form-control" id="percentage" placeholder="Percentage will appear here" readonly>
                 </div>
                 <div id="warning" class="alert alert-danger mt-3" style="display: none;">
-                    Marks must be between 0 and 75.
+                    Marks and percentages must be between 0 and their respective maximums.
                 </div>
             </div>
         </div>
@@ -27,13 +35,18 @@
     <script>
         function convertToPercentage() {
             var marks = document.getElementById('marks').value;
-            if (marks < 0 || marks > 75) {
+            var mcq1 = document.getElementById('mcq1').value;
+            var mcq2 = document.getElementById('mcq2').value;
+
+            if (marks < 0 || marks > 75 || mcq1 < 0 || mcq1 > 100 || mcq2 < 0 || mcq2 > 100) {
                 document.getElementById('warning').style.display = 'block';
                 document.getElementById('percentage').value = '';
             } else {
                 document.getElementById('warning').style.display = 'none';
-                var percentage = (marks / 75) * 70;
-                document.getElementById('percentage').value = percentage.toFixed(2) + '%';
+                var examPercentage = (marks / 75) * 70;
+                var mcqPercentage = (Number(mcq1) + Number(mcq2)) / 2 * 0.3;
+                var totalPercentage = examPercentage + mcqPercentage;
+                document.getElementById('percentage').value = totalPercentage.toFixed(2) + '%';
             }
         }
     </script>
