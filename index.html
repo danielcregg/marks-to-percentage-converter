@@ -1,20 +1,20 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>OOC1 Exam Marks to Percentage Converter</title>
+    <title>OOC1 Exam Marks to Module Percentage Converter</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
 </head>
 <body>
     <div class="container mt-5">
-        <h1 class="text-center">OOC1 Exam Marks to Percentage Converter</h1>
+        <h1 class="text-center">OOC1 Exam Marks to Module Percentage Converter</h1>
         <div class="row justify-content-center">
             <div class="col-md-6">
                 <div class="form-group">
-                    <label for="marks">Enter Marks (out of 75):</label>
+                    <label for="marks">Enter your paper Marks (0 of 75):</label>
                     <input type="number" class="form-control" id="marks" placeholder="Enter marks" min="0" max="75" step="0.1" oninput="convertToPercentage()">
                 </div>
                 <div class="form-group mt-3">
-                    <label for="percentage">Percentage:</label>
+                    <label for="percentage">Module Percentage:</label>
                     <input type="text" class="form-control" id="percentage" placeholder="Percentage will appear here" readonly>
                 </div>
                 <div id="warning" class="alert alert-danger mt-3" style="display: none;">
