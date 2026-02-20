@@ -1,38 +1,60 @@
+# Marks to Percentage Converter
 
-# OOC1 Exam Strategy 
+![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black)
+![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=css3&logoColor=white)
+![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=flat-square)
 
-Click this link to help convert paper marks result to actual module percentage:  
-https://danielcregg.github.io/marks-to-percentage-converter/
+A web-based calculator that converts exam paper marks and MCQ scores into an overall module percentage. Built for the OOC1 (Object-Oriented Computing 1) module.
 
+## Overview
 
-- The Exam is 2 hours (120 minutes) long. Bring a watch with you! 
+This tool helps students quickly calculate their final module percentage by combining their written exam marks (out of 75, worth 70%) with their MCQ assessment scores (worth 30%). It provides real-time calculation as values are entered, with input validation and instant feedback. Hosted on GitHub Pages for easy access.
 
-- The Exam contains 4 questions, you must answer 3.  
+## Features
 
-- Each Question is worth 25 marks. (Exam is worth 70% so 1 mark ~ 1%) 
+- Real-time percentage calculation as you type
+- Combines exam marks (70% weighting) and MCQ scores (30% weighting)
+- Input validation with clear error messaging
+- Responsive layout using Bootstrap
+- Hosted on GitHub Pages for instant access
 
-- The maximum score you can receive in the paper is 75 marks.   
+## Prerequisites
 
-- Those 75 marks are equivalent to 70% of the total grade for this module. 
+- A **modern web browser** (Chrome, Firefox, Safari, or Edge)
 
-- Know how much percent you need before going into the exam: e.g. if I have 15 percent already. I need 25% to pass. That means I need 75/70*25 (i.e. 26.8) marks in the exam. 
+## Getting Started
 
-- When you get the exam paper, spend the first 10 minutes planning what questions you will answer to maximise your result. Carefully look at the marks for each part of each question. 
+### Installation
 
-- Set aside 10 minutes at the end of the exam to go back over your solutions. 
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/danielcregg/marks-to-percentage-converter.git
+   cd marks-to-percentage-converter
+   ```
 
-- You have (120 - 10 - 10) / 75 = 1.33 minutes (i.e. 1 minute 20 seconds) for each mark. (e.g. spend no longer than 6 mins 40 seconds on a 5-mark question) 
+2. Open `index.html` in your browser.
 
-- The exam paper will follow previous years question style. Complete previous exam paper questions and study the notes. 
+### Usage
 
-- You will need to know how to write classes and methods on a blank piece of paper 
+1. Visit [danielcregg.github.io/marks-to-percentage-converter](https://danielcregg.github.io/marks-to-percentage-converter/) or open `index.html` locally.
+2. Enter your exam paper marks (0--75).
+3. Enter your MCQ1 percentage (0--100).
+4. Enter your MCQ2 percentage (0--100).
+5. Your overall module percentage is displayed automatically.
 
-- Do not scribble out work done. Put a light line through if you want but all will be corrected.  
+**Calculation formula:**
+- Exam component: `(marks / 75) * 70`
+- MCQ component: `((MCQ1 + MCQ2) / 2) * 0.3`
+- Total: Exam component + MCQ component
 
-- Your aim is to maximise your marks. A lot of marks go for the initial attempt of the question and then a few extra for the hard bit at the end. If you can not complete a 10 mark question don’t give up. Do as much as you can. Draw out the class, constructor, getters, setters and other methods. 
+## Tech Stack
 
-- Don’t spend 10 mins on a 4 mark question you have not notion about. Quickly give it your best guess and move on. 
+- **HTML5** - Page structure and form elements
+- **JavaScript** - Real-time calculation logic
+- **Bootstrap 4** - Responsive UI styling
+- **GitHub Pages** - Static site hosting
 
-- Look at all questions as they may help with answers to other questions. 
+## License
 
-- You should know how define APIE and give a code example. 
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
