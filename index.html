@@ -1,6 +1,8 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>OOC1 Exam Marks to Module Percentage Converter</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
 </head>
@@ -34,9 +36,19 @@
 
     <script>
         function convertToPercentage() {
-            var marks = document.getElementById('marks').value;
-            var mcq1 = document.getElementById('mcq1').value;
-            var mcq2 = document.getElementById('mcq2').value;
+            var marks = parseFloat(document.getElementById('marks').value);
+            var mcq1 = parseFloat(document.getElementById('mcq1').value);
+            var mcq2 = parseFloat(document.getElementById('mcq2').value);
+
+            if (isNaN(marks) && isNaN(mcq1) && isNaN(mcq2)) {
+                document.getElementById('warning').style.display = 'none';
+                document.getElementById('percentage').value = '';
+                return;
+            }
+
+            marks = isNaN(marks) ? 0 : marks;
+            mcq1 = isNaN(mcq1) ? 0 : mcq1;
+            mcq2 = isNaN(mcq2) ? 0 : mcq2;
 
             if (marks < 0 || marks > 75 || mcq1 < 0 || mcq1 > 100 || mcq2 < 0 || mcq2 > 100) {
                 document.getElementById('warning').style.display = 'block';
@@ -44,7 +56,7 @@
             } else {
                 document.getElementById('warning').style.display = 'none';
                 var examPercentage = (marks / 75) * 70;
-                var mcqPercentage = (Number(mcq1) + Number(mcq2)) / 2 * 0.3;
+                var mcqPercentage = (mcq1 + mcq2) / 2 * 0.3;
                 var totalPercentage = examPercentage + mcqPercentage;
                 document.getElementById('percentage').value = totalPercentage.toFixed(2) + '%';
             }
